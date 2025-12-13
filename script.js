@@ -415,7 +415,27 @@ function initPageHeaderAnimation() {
     // Only run if .page-header exists
     if (!document.querySelector('.page-header')) return;
 
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    const navbar = document.querySelector('.navbar');
+    const isMobile = window.innerWidth <= 768;
+
+    // On mobile, hide navbar initially during first section animation
+    if (isMobile && navbar) {
+        gsap.set(navbar, { opacity: 0, visibility: 'hidden' });
+        
+        // Hide navbar for 2.5 seconds (entire first section animation period)
+        // Then fade it in smoothly
+        gsap.to(navbar, {
+            opacity: 1,
+            visibility: 'visible',
+            duration: 0.8,
+            ease: 'power2.out',
+            delay: 2.5 // Wait for first section animation to complete
+        });
+    }
+
+    const tl = gsap.timeline({ 
+        defaults: { ease: 'power3.out' }
+    });
 
     // 1. Heading: Starts big and slightly lower, shrinks to normal and moves up
     tl.fromTo('.page-header .display-text',
