@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Laikon Deli</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="assets/images/hero-bg.png" alt="Laikon Deli" class="navbar-logo">
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="booking.html" class="nav-link">Book Now</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="menu.html" class="nav-link">Menu</a>
+            <a href="catering.html" class="nav-link">Catering</a>
+            <a href="christmas.html" class="nav-link">Christmas</a>
+            <a href="functions.html" class="nav-link">Functions</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="gift-cards.html" class="nav-link">Gift Cards</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header">
+            <h1 class="display-text">Our Story</h1>
+            <p class="hero-subtitle">Richmond's Favourite Since 1976</p>
+        </header>
+
+        <!-- Story Section -->
+        <section class="about-story">
+            <div class="container">
+                <div class="story-content">
+                    <blockquote class="story-quote">
+                        "Since 1976, Laikon Deli has been a Richmond favourite for gourmet foods, cheeses, cured meats
+                        and homemade specialities."
+                    </blockquote>
+                    <p class="story-text">
+                        From fresh meals, unique catering, or bespoke functions, we bring the best of European flavour
+                        to your table. We believe in quality, tradition, and great food – all in one place.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <div class="timeline-container">
+                <!-- Timeline Line (via CSS) -->
+
+                <!-- Item 1: Left -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-img">
+                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop"
+                                alt="1976 Opening">
+                        </div>
+                        <div class="timeline-text">
+                            <span class="timeline-year">1976</span>
+                            <h3>Our Beginning</h3>
+                            <p>Founded by the Laikon family, bringing authentic European flavors to the heart of
+                                Richmond. A small deli with big dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Right -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-img">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+                                alt="Expansion">
+                        </div>
+                        <div class="timeline-text">
+                            <span class="timeline-year">1995</span>
+                            <h3>The Expansion</h3>
+                            <p>We expanded our range to include fine wines and bespoke catering, becoming a staple for
+                                local gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Left -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-img">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+                                alt="Renovation">
+                        </div>
+                        <div class="timeline-text">
+                            <span class="timeline-year">2010</span>
+                            <h3>Modern Tradition</h3>
+                            <p>A fresh look for a new decade, while keeping the traditional recipes that our customers
+                                love.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Right -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-img">
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2047&auto=format&fit=crop"
+                                alt="Today">
+                        </div>
+                        <div class="timeline-text">
+                            <span class="timeline-year">Today</span>
+                            <h3>Community Heart</h3>
+                            <p>Still family-owned, still delicious. We continue to serve the Richmond community with
+                                pride.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Heritage Image -->
+        <section class="about-image">
+            <div class="container">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop"
+                        alt="Laikon Deli Heritage">
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="about-values">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">What We Stand For</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <span class="value-icon">🧀</span>
+                        <h3>Quality</h3>
+                        <p>Only the finest ingredients, sourced from trusted suppliers.</p>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">🏛️</span>
+                        <h3>Tradition</h3>
+                        <p>Recipes and methods passed down through generations.</p>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">❤️</span>
+                        <h3>Community</h3>
+                        <p>A family-run business serving our local neighbourhood for 47 years.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visit CTA -->
+        <section class="about-cta">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Visit Us</h2>
+                <p class="cta-address">324 Bridge Road, Richmond, VIC 3121</p>
+                <p class="cta-phone"><a href="tel:0394288495">(03) 9428 8495</a></p>
+                <a href="contact.html" class="btn-primary static-btn"
+                    style="margin-top: 2rem; padding: 1rem 2.5rem; border-radius: 8px; display: inline-block;">Get
+                    Directions</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

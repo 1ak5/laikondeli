@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laikon Deli | Est. 1976</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <!-- Three.js Removed -->
+    <style>
+        #hero-webgl {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /* Behind content but in front of background image if needed, or adjust */
+            pointer-events: none;
+            /* Let clicks pass through */
+        }
+
+        .hero-v2 {
+            position: relative;
+            /* Ensure canvas is positioned relative to hero */
+            overflow: hidden;
+            /* Contain the canvas */
+        }
+
+        .hero-content-v2 {
+            z-index: 2;
+            /* Ensure text is above canvas */
+            position: relative;
+        }
+
+        /* 3D Tilt Effect CSS */
+        .fav-card {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            will-change: transform;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grain-overlay"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="assets/images/hero-bg.png" alt="Laikon Deli" class="navbar-logo">
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="booking.html" class="nav-link">Book Now</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="menu.html" class="nav-link">Menu</a>
+            <a href="catering.html" class="nav-link">Catering</a>
+            <a href="christmas.html" class="nav-link">Christmas</a>
+            <a href="functions.html" class="nav-link">Functions</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="gift-cards.html" class="nav-link">Gift Cards</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-v2">
+            <video class="hero-background-video" autoplay loop muted playsinline>
+                <source src="assets/images/vdo2.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-bg">
+                <img src="assets/images/img1.avif" alt="Atmosphere">
+            </div>
+            <div class="hero-content-v2">
+                <span class="hero-subtitle">Est. 1976</span>
+                <h1 class="display-text">Laikon<br>Deli</h1>
+                <div class="hero-actions">
+                    <a href="menu.html" class="btn-magnetic btn-primary">View Menu</a>
+                    <a href="booking.html" class="btn-magnetic" style="color: red;">Book Table</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <div class="marquee-container greek-border-top">
+            <div class="marquee-content">
+                <span>Gourmet Cheese ✦ Cured Meats ✦ Fine Coffee ✦ Artisan Bread ✦ Gourmet Cheese ✦ Cured Meats ✦ Fine
+                    Coffee ✦ Artisan Bread ✦ Laikon Deli ✦ Since 1976 ✦</span>
+            </div>
+        </div>
+
+        <!-- Split Feature Section -->
+        <section class="split-feature">
+            <div class="feature-image">
+                <img src="assets/images/section-img.jpg" alt="Charcuterie Board">
+            </div>
+            <div class="feature-content">
+                <span class="feature-subtitle">Our Craft</span>
+                <h2 class="feature-title">The Art of <br><em class="serif-italic">Charcuterie</em></h2>
+                <p class="feature-text">
+                    We cure our own meats and source the finest cheeses from around the world. Taste the difference of
+                    tradition in every bite.
+                </p>
+                <a href="menu.html" class="btn-outline">Explore Deli</a>
+            </div>
+        </section>
+
+        <!-- Favorites Grid -->
+        <section class="container" style="padding: 10vh 5vw;">
+            <div class="greek-divider">
+                <!-- Simple Greek/Floral Ornament SVG -->
+                <svg width="60" height="20" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 0C30 0 25 10 0 10M30 0C30 0 35 10 60 10" stroke="#d4af37" stroke-width="2" />
+                    <circle cx="30" cy="15" r="3" fill="#d4af37" />
+                </svg>
+            </div>
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="section-title">Crowd Favorites</h2>
+                <p style="opacity: 0.7;">Dishes that have defined us for decades.</p>
+            </div>
+
+            <div class="favorites-grid">
+                <div class="fav-card">
+                    <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=2073&auto=format&fit=crop"
+                        alt="The Reuben">
+                    <div class="fav-info">
+                        <h3>The Reuben</h3>
+                        <p>Corned beef, sauerkraut, swiss cheese.</p>
+                    </div>
+                </div>
+                <div class="fav-card">
+                    <img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?q=80&w=1780&auto=format&fit=crop"
+                        alt="Coffee">
+                    <div class="fav-info">
+                        <h3>Specialty Coffee</h3>
+                        <p>Roasted locally, brewed perfectly.</p>
+                    </div>
+                </div>
+                <div class="fav-card">
+                    <img src="https://images.unsplash.com/photo-1623653387945-2fd25214f8fc?q=80&w=2070&auto=format&fit=crop"
+                        alt="Spanakopita">
+                    <div class="fav-info">
+                        <h3>Spanakopita</h3>
+                        <p>House-made spinach & feta triangle.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Section (Subtle Design) -->
+        <section class="quality-section">
+            <div class="quality-image">
+                <img src="assets/images/icon.png" alt="Laikon Deli">
+            </div>
+            <div class="quality-content">
+                <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3.5rem);">Quality, tradition, and great
+                    food — all in one place.</h2>
+                <p style="opacity: 0.8; line-height: 1.8; margin-bottom: 2rem;">
+                    From casual lunches to milestone celebrations, our catering is designed to impress. Featuring fresh,
+                    high-quality ingredients and beautifully arranged platters, we offer a range of options to suit
+                    every event and dietary need.
+                </p>
+                <div class="quality-actions">
+                    <a href="gift-cards.html" class="btn-magnetic">Gift Cards</a>
+                    <a href="booking.html" class="btn-magnetic btn-primary">Book Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section style="background: var(--color-gold); color: var(--color-bg); padding: 15vh 5vw; text-align: center;">
+            <p
+                style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 4rem); line-height: 1.2; max-width: 1000px; margin: 0 auto;">
+                "Laikon Deli is not just a cafe, it's a Richmond institution. The place where tradition meets
+                exceptional taste."
+            </p>
+            <p style="margin-top: 2rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">— The
+                Melbourne Age</p>
+        </section>
+
+        <!-- Gallery Strip -->
+        <section class="video-gallery">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/images/vdo1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                    <div class="video-overlay-text">
+                        <p>Fridays just got a little more delicious at Laikon ✨</p>
+                        <p>From 3–7pm, we're rolling out Snacks & Sips — your new weekly spot for light bites, cheeky
+                            drinks and those golden Richmond sunsets.</p>
+                        <p>Think of it as our very own Euro Hour… good times, good vibes, and all the simple pleasures
+                            we love.</p>
+                        <p>Come by, unwind, share a plate, raise a glass.</p>
+                        <p>Fridays are better when we spend them together. ❤️</p>
+                        <p class="hashtags">#LaikonDeli #RichmondLocal #EuroHour #FridayFeels #SnacksAndSips
+                            #GoodVibesOnly #MelbourneFoodies #DeliDays #LaikonFamily</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/images/vdo2.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                    <div class="video-overlay-text">
+                        <p>Christmas has arrived in our cheese fridge 🎄🧀</p>
+                        <p>From heart-shaped festive cheddars to creamy bries, truffle brie, vintage favourites and all
+                            the perfect pairings… the Christmas grazing magic starts right here at Laikon.</p>
+                        <p>Whether you're building a show-stopping platter, wrapping up a foodie gift, or planning the
+                            family feast, we've stocked all the classics (and a few little treats) to make it easy.</p>
+                        <p>Pop in, have a chat, taste a few, and let us help you put together something special for the
+                            season ❤️</p>
+                        <p class="hashtags">#LaikonDeli #Richmond3121 #ChristmasAtLaikon #FestiveCheese #CheeseLovers
+                            #GrazingTableGoals #SupportLocal #MelbourneEats #ChristmasEntertaining</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/images/vdo3.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                    <div class="video-overlay-text">
+                        <p>Artisan Cheese & Wine 🍷🧀</p>
+                        <p>Discover our curated selection of local and international cheeses. Perfect for your next
+                            gathering.</p>
+                        <p>Pair it with our fine wines for the ultimate experience.</p>
+                        <p class="hashtags">#CheeseLovers #WineAndDine #LaikonSpecial #GourmetLife</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/images/vdo4.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                    <div class="video-overlay-text">
+                        <p>Morning Rituals ☕🥐</p>
+                        <p>Start your day with the aroma of fresh coffee and warm pastries.</p>
+                        <p>The perfect spot to catch up or unwind.</p>
+                        <p class="hashtags">#MorningVibes #CoffeeStarts #FreshPastries #RichmondCafe</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Footer -->
+        <footer class="premium-footer">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="assets/images/hero-bg.png" alt="Laikon Deli" class="footer-logo"
+                        style="margin-bottom: 2rem; max-width: 200px; height: auto;">
+                    <p style="opacity: 0.8; line-height: 1.8; max-width: 300px;">
+                        Serving Richmond since 1976. A tradition of excellence in gourmet foods, fine cheeses, and
+                        bespoke catering.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">IG</a>
+                        <a href="#" class="social-btn">FB</a>
+                        <a href="#" class="social-btn">YT</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="menu.html">Our Menu</a></li>
+                        <li><a href="catering.html">Catering & Events</a></li>
+                        <li><a href="booking.html">Book A Table</a></li>
+                        <li><a href="gift-cards.html">Gift Cards</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Opening Hours</h3>
+                    <ul class="footer-links">
+                        <li><span style="opacity:0.6;">Mon - Fri:</span> 7am - 4pm</li>
+                        <li><span style="opacity:0.6;">Sat - Sun:</span> 8am - 3pm</li>
+                        <li style="margin-top: 1rem; color: var(--color-gold);">Open Public Holidays</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <div class="footer-info">
+                        <p>324 Bridge Road,<br>XYZ , Australia</p>
+                        <p><a href="tel:0394288495">+91 1234567890</a></p>
+                        <p><a href="mailto:info@laikondeli.com.au">laikondeli@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2024 Laikon Deli. All rights reserved.
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
