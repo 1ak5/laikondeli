@@ -511,6 +511,28 @@ a {
     .social-links {
         justify-content: center;
     }
+
+    /* Force colorful hero image on mobile */
+    .hero-video-bg img,
+    .hero-video-bg video {
+        filter: grayscale(0%) contrast(1.1) !important;
+    }
+
+    /* Aesthetic Font for Mobile Hero Text */
+    /* Aesthetic Font for Mobile Hero Text */
+    .display-text {
+        font-family: 'Yeseva One', serif !important;
+        font-style: normal;
+        letter-spacing: 0.15em !important;
+        /* Significantly increased spacing */
+        font-weight: 400;
+        line-height: 1.1;
+        /* Slightly relaxed line height */
+        text-transform: uppercase;
+        /* Back to uppercase for better spacing rhythm */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        /* Subtle depth */
+    }
 }
 
 .btn-primary {
@@ -519,8 +541,43 @@ a {
     color: #FFF;
 }
 
+/* Button Color Interactions */
 .btn-primary:hover {
-    background: #b51219;
+    background: transparent;
+    /* Let pseudo-element fill it */
+    border-color: #000;
+    color: #FFF;
+}
+
+.btn-primary:hover::before {
+    background: #000;
+    width: 300px;
+    /* Ensure expansion triggers */
+    height: 300px;
+}
+
+.btn-black {
+    background-color: #000;
+    color: #F5F5DC;
+    border-color: #000;
+}
+
+/* Ensure Black Button uses pseudo-element for red fill */
+.btn-black::before {
+    background: var(--color-gold);
+    /* Red fill waiting to expand */
+}
+
+.btn-black:hover {
+    background: transparent;
+    border-color: var(--color-gold);
+    color: #FFF;
+}
+
+.btn-black:hover::before {
+    width: 300px;
+    height: 300px;
+    background: var(--color-gold);
 }
 
 /* Sections */
@@ -566,10 +623,14 @@ a {
     transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Hover Effect on Hero Image */
-.hero-v2:hover .hero-video-bg {
+/* Hover Effect on Hero Image - DISABLED EXPANSION */
+/* .hero-v2:hover .hero-video-bg {
     width: 45vw;
     height: 65vh;
+} */
+.hero-v2:hover .hero-video-bg img,
+.hero-v2:hover .hero-video-bg video {
+    filter: grayscale(0%) contrast(1);
 }
 
 .hero-video-bg img,
@@ -598,7 +659,7 @@ a {
     text-transform: uppercase;
     line-height: 0.8;
     font-weight: 800;
-    letter-spacing: -0.04em;
+    letter-spacing: 0.05em;
     color: var(--color-red);
     mix-blend-mode: normal;
     pointer-events: none;
@@ -884,13 +945,13 @@ a {
         width: 100%;
         gap: 1rem;
         align-items: center;
-        
+
     }
 
     .hero-actions .btn-magnetic {
         width: 100%;
         max-width: 250px;
-        
+
     }
 
     .search-grid {

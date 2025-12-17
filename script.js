@@ -63,13 +63,14 @@ if (typeof gsap !== 'undefined') {
             .set('.hero-content-v2', { perspective: 1000 }) // Add perspective for 3D effect
             .from('.display-text', {
                 y: 100,
+                x: 0,
                 scale: 1.1,
                 rotationX: -30,
                 transformOrigin: "50% 50% -50px",
                 opacity: 0,
                 duration: 1.5,
                 ease: 'power4.out',
-                skewY: 2
+                skewY: 0 // Removed skew on enter to prevent layout shift perception
             }, '-=1.5')
             .from('.hero-subtitle', {
                 y: 20,
@@ -239,6 +240,7 @@ if (typeof gsap !== 'undefined') {
     const magneticButtons = document.querySelectorAll('.btn-magnetic');
     magneticButtons.forEach(btn => {
         // Skip magnetic effect for buttons in search-content
+        /* DISABLED MAGNET EFFECT AS PER REQUEST
         if (btn.closest('.search-content')) {
             return;
         }
@@ -261,6 +263,7 @@ if (typeof gsap !== 'undefined') {
                 ease: 'power2.out'
             });
         });
+        */
     });
 }
 
@@ -269,22 +272,22 @@ function setActiveNavLink() {
     const navLinks = document.querySelectorAll('.nav-link');
     // Get current page filename
     let currentPage = window.location.pathname.split('/').pop();
-    
+
     // Handle root/index case
     if (!currentPage || currentPage === '' || currentPage === 'index.html') {
         currentPage = 'index.html';
     }
-    
+
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
         // Remove active class from all links first
         link.classList.remove('active');
-        
+
         // Check if current page matches the link
         // Normalize both to handle cases like 'index.html' vs './index.html'
         const normalizedLink = linkHref.replace('./', '').replace('/', '');
         const normalizedCurrent = currentPage.replace('./', '').replace('/', '');
-        
+
         if (normalizedLink === normalizedCurrent) {
             link.classList.add('active');
         }
@@ -421,7 +424,7 @@ function initPageHeaderAnimation() {
     // On mobile, hide navbar initially during first section animation
     if (isMobile && navbar) {
         gsap.set(navbar, { opacity: 0, visibility: 'hidden' });
-        
+
         // Hide navbar for 2.5 seconds (entire first section animation period)
         // Then fade it in smoothly
         gsap.to(navbar, {
@@ -433,20 +436,23 @@ function initPageHeaderAnimation() {
         });
     }
 
-    const tl = gsap.timeline({ 
+    const tl = gsap.timeline({
         defaults: { ease: 'power3.out' }
     });
 
     // 1. Heading: Starts big and slightly lower, shrinks to normal and moves up
     tl.fromTo('.page-header .display-text',
         {
-            scale: 2.0,
-            y: 100,
-            opacity: 0
+            scale: 1.15, // Reduced from 2.0 to prevent visual shift/overflow on mobile
+            y: 60,
+            x: 0, // Ensure no horizontal shift
+            opacity: 0,
+            transformOrigin: 'center center' // Force centering
         },
         {
             scale: 1,
             y: 0,
+            x: 0,
             opacity: 1,
             duration: 1.5,
             delay: 0.2, // Small delay after page load
